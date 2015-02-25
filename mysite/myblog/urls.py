@@ -9,6 +9,6 @@ urlpatterns = patterns('myblog.views',
 
     # Named regular epxression - puts argument in kwargs - named capture group
     url(r'^posts/(?P<post_id>\d+)/$',
-    	'stub_view',
+    	'detail_view',
     	name="blog_detail"),
 )
