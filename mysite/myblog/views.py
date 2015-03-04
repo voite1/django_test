@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.template import RequestContext, loader
 from myblog.models import Post
-from django.shortcuts import render
 
 
 def stub_view(request, *args, **kwargs):
@@ -14,8 +13,6 @@ def stub_view(request, *args, **kwargs):
         body += "Kwargs:\n"
         body += "\n".join(["\t%s: %s" % i for i in kwargs.items()])
     return HttpResponse(body, content_type="text/plain")
-
-# Create your views here.
 
 
 def list_view(request):
@@ -33,4 +30,3 @@ def detail_view(request, post_id):
         raise Http404
     context = {'post': post}
     return render(request, 'detail.html', context)
-
